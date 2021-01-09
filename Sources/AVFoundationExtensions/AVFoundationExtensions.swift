@@ -28,3 +28,17 @@ extension AVPlayer: AudioTrackContainable {
     self.currentItem?.hasAudioTrack ?? false
   }
 }
+
+extension AVAssetTrack {
+  public var isSquare: Bool {
+    self.naturalSize.width == self.naturalSize.height
+  }
+
+  public var isVertical: Bool {
+    self.naturalSize.width < self.naturalSize.height
+  }
+
+  public var isHorizontal: Bool {
+    self.naturalSize.width > self.naturalSize.height
+  }
+}
